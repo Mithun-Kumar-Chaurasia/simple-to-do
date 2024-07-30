@@ -70,8 +70,8 @@
             $.ajax({
                 type: "POST",
                 "headers": {'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')},
-                url: '{{route("task-delete")}}',
-                data: {'id': id},
+                url: '{{route("task-delete", "")}}/'+id,
+                // data: {'id': id},
                 dataType: 'json',
                 success: function(data) {
                     // console.log(data.message);
@@ -86,8 +86,8 @@
         $.ajax({
             type: "POST",
             "headers": {'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')},
-            url: '{{route("task-complete")}}',
-            data: {'id': id},
+            url: '{{route("task-complete", "")}}/'+id,
+            // data: {'id': id},
             dataType: 'json',
             success: function(data) {
                 // console.log(data.message);

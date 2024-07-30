@@ -55,8 +55,8 @@ class TodoController extends Controller
         }
         return $res;
     }
-    public function delete(Request $request) {
-        $result = Todo::where('id', $request->id)->delete();
+    public function delete($id) {
+        $result = Todo::where('id', $id)->delete();
         
         if($result) {
 
@@ -76,8 +76,8 @@ class TodoController extends Controller
         return $res;
     }
 
-    public function update(Request $request) {
-        $result = Todo::where('id', $request->id)->update(['status'=>'done']);
+    public function update($id) {
+        $result = Todo::where('id', $id)->update(['status'=>'done']);
 
         if($result) {
 

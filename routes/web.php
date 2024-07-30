@@ -19,6 +19,6 @@ use \App\Http\Controllers\TodoController;
 
 Route::get('/', [TodoController::class, 'index'])->name('index');
 Route::post('store', [TodoController::class, 'store'])->name('store-todo');
-Route::post('delete', [TodoController::class, 'delete'])->name('task-delete');
-Route::post('update', [TodoController::class, 'update'])->name('task-complete');
+Route::post('delete/{id}', [TodoController::class, 'delete'])->name('task-delete');
+Route::post('update/{id}', [TodoController::class, 'update'])->name('task-complete');
 Route::get('show-all', [TodoController::class, 'show_all'])->name('show-all');
